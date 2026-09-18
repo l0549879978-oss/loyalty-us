@@ -13,9 +13,21 @@
 <style>
 :root{--ink:#171717;--muted:#7f7f7f;--line:#ececec;--soft:#f7f7f7;--gold:#c59a3d;--green:#13785b;--red:#9b2c2c}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:var(--ink)}.app{max-width:560px;min-height:100vh;margin:auto;background:#fff}.head{padding:22px 20px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.brand{font-size:26px;font-weight:900;letter-spacing:1.6px}.brand i{font-style:normal;color:var(--gold)}.headActions{display:flex;gap:8px}.smallBtn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 11px;font-weight:800;cursor:pointer}.main{padding:22px 18px 34px}.hello{font-size:15px;color:var(--muted)}.title{font-size:31px;font-weight:900;margin:4px 0 18px}.balanceCard{background:#171717;color:#fff;border-radius:26px;padding:24px;box-shadow:0 16px 36px rgba(0,0,0,.16)}.balanceLabel{font-size:13px;color:#c8c8c8}.balance{font-size:48px;font-weight:900;margin:5px 0 3px}.balanceHint{font-size:12px;color:#c8c8c8}.status{margin-top:12px;text-align:center;font-size:13px;color:var(--green);font-weight:800}.section{margin-top:24px}.sectionHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.sectionHead b{font-size:17px}.sectionHead span{font-size:12px;color:var(--muted)}.rewardList,.historyCard,.profileCard{border:1px solid var(--line);border-radius:20px;overflow:hidden}.rewardRow,.history{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;border-bottom:1px solid var(--line)}.rewardRow:last-child,.history:last-child{border-bottom:0}.biz{display:flex;align-items:center;gap:11px}.bizLogo{width:42px;height:42px;border-radius:13px;background:#f6f0e1;color:#7a5b17;display:grid;place-items:center;font-weight:900}.small{font-size:12px;color:var(--muted);margin-top:3px}.amount{font-size:18px;font-weight:900}.history .left{display:flex;align-items:center;gap:11px}.dot{width:36px;height:36px;border-radius:12px;background:#f7f3e8;color:#94701f;display:grid;place-items:center;font-weight:900}.plus{font-size:16px;font-weight:900;color:var(--green)}.minus{font-size:16px;font-weight:900;color:var(--red)}.empty{padding:18px;color:var(--muted);font-size:13px}.profileCard{padding:16px}.profileGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.profileItem span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}.profileItem b{display:block;margin-top:3px;font-size:14px;word-break:break-word}.installRow{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--soft);border-radius:18px;padding:14px 15px}.installText b{display:block;font-size:15px}.installText span{display:block;font-size:12px;color:var(--muted);margin-top:3px}.installBtn{border:0;border-radius:12px;background:#fff;padding:10px 12px;font-weight:900;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.05)}.iosHelp{display:none;margin-top:9px;font-size:12px;color:var(--muted);background:#fafafa;padding:10px;border-radius:12px}.footer{text-align:center;color:#a0a0a0;font-size:11px;padding:12px 20px 24px}@media(max-width:520px){.profileGrid{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="accessibility.css"></head>
+<link rel="stylesheet" href="accessibility.css"><style id="exit-controls">
+.main{padding-bottom:118px!important}
+.headActions{flex-wrap:wrap;justify-content:flex-end}
+.smallBtn{min-height:44px!important;padding:11px 14px!important}
+.exitBar{position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:80;width:min(560px,100%);display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid #e6e6e6;box-shadow:0 -8px 24px rgba(0,0,0,.10);backdrop-filter:blur(12px)}
+.exitAction{min-height:52px;border-radius:14px;font-size:16px;font-weight:900;cursor:pointer}
+.exitAction.secondary{background:#fff;color:#171717;border:1px solid #cfcfcf}
+.exitAction.primary{background:#171717;color:#fff;border:1px solid #171717}
+.closeHelp{display:none;position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.58);padding:22px;place-items:center}
+.closeHelp.show{display:grid}
+.closeHelpCard{width:min(420px,100%);background:#fff;color:#171717;border-radius:22px;padding:24px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.closeHelpCard h2{margin:0 0 10px}.closeHelpCard p{color:#555;line-height:1.5}.closeHelpCard button{width:100%;min-height:50px;border:0;border-radius:13px;background:#171717;color:#fff;font-size:16px;font-weight:900}
+</style></head>
 <body><div class="app">
-<div class="head"><div class="brand">LOYALTY<i>.</i></div><div class="headActions"><button class="smallBtn" type="button" onclick="logoutCustomer()">Log out</button></div></div>
+<div class="head"><div class="brand">LOYALTY<i>.</i></div><div class="headActions"><button class="smallBtn" type="button" onclick="location.href='index.html'">Home</button><button class="smallBtn" type="button" onclick="logoutCustomer()">Log out</button></div></div>
 <main class="main">
 <div class="hello" id="hello">Hello</div><div class="title">My Rewards</div>
 <div class="balanceCard"><div class="balanceLabel">Total available rewards</div><div class="balance" id="total">$--</div><div class="balanceHint">Across businesses connected to your LOYALTY account</div></div>
@@ -28,7 +40,10 @@
 <section class="section"><div class="sectionHead"><b>Account details</b><span>Private</span></div><div class="profileCard"><div class="profileGrid" id="profile"><div class="empty">Loading…</div></div></div></section>
 
 <section id="installCard" class="section"><div class="installRow"><div class="installText"><b>Add LOYALTY to your Home Screen</b><span>Open My Rewards with one tap next time.</span></div><button id="installBtn" class="installBtn" type="button">Add</button></div><div id="iosHelp" class="iosHelp">On iPhone: Safari → Share → Add to Home Screen.</div></section>
-</main><div class="footer">LOYALTY · Scan to See What You Earn</div></div>
+</main><div class="footer">LOYALTY · Scan to See What You Earn</div>
+<div class="exitBar" aria-label="App controls"><button class="exitAction secondary" type="button" onclick="closeCustomerApp()">Close app</button><button class="exitAction primary" type="button" onclick="logoutCustomer()">Log out</button></div>
+<div id="closeHelp" class="closeHelp" role="dialog" aria-modal="true" aria-labelledby="closeHelpTitle"><div class="closeHelpCard"><h2 id="closeHelpTitle">Close LOYALTY</h2><p id="closeHelpText">Use your phone controls to close the app.</p><button type="button" onclick="document.getElementById('closeHelp').classList.remove('show')">Got it</button></div></div>
+</div>
 <script>
 const token=localStorage.getItem('loyalty_customer_access_token');
 if(!token){location.replace('join.html?mode=login')}
@@ -55,6 +70,17 @@ async function refresh(){
  }
 }
 function escapeHtml(value){return String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function closeCustomerApp(){
+ try{window.close()}catch(_e){}
+ setTimeout(()=>{
+  if(document.hidden)return;
+  const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+  document.getElementById('closeHelpText').textContent=isIOS
+   ?'Swipe up from the bottom of the screen to return Home, then swipe LOYALTY away from the app switcher.'
+   :'Tap the Recent Apps button or swipe up and hold, then swipe LOYALTY away.';
+  document.getElementById('closeHelp').classList.add('show');
+ },250);
+}
 async function logoutCustomer(){
  try{await fetch('/api/neon',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'customer_logout'})})}catch(_e){}
  localStorage.removeItem('loyalty_customer_access_token');

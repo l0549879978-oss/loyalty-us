@@ -15,7 +15,7 @@
   const hello=document.getElementById('businessHello');const login=document.getElementById('loginCard');if(hello&&login&&!login.classList.contains('hidden')&&/Loading/i.test(hello.textContent||''))hello.textContent='Business owner login';
 
   // Black + refined gold visual system for Loyalty US, including mobile.
-  const style=document.createElement('style');style.id='loyalty-us-black-gold';style.textContent=`
+  if(!document.body.classList.contains('customer-auth-light')){const style=document.createElement('style');style.id='loyalty-us-black-gold';style.textContent=`
    :root{--navy:#090909!important;--navy2:#171717!important;--gold:#c9a24a!important;--bg:#111!important;--text:#f5f1e8!important;--muted:#b8b0a0!important;--line:#3a3428!important}
    body{background:#111!important;color:#f5f1e8!important} .app{background:#151515!important}
    .top{background:linear-gradient(135deg,#050505,#17130b)!important;border-bottom:1px solid #4b3b1d!important}.brand{color:#fff!important}.hello{color:#d8c28d!important}
@@ -26,7 +26,7 @@
    .small,.dash span,.metric span,.history-meta,.customer-meta,.customer-stat span{color:#b8b0a0!important}.warn{background:#33270f!important;color:#f3d58c!important}.ok{background:#173025!important;color:#bce8ce!important}
    .qr-wrap{border-color:#c9a24a!important}.legal-links{background:#111!important;color:#d8c28d!important}.legal-links a{color:#d8c28d!important}
    @media(max-width:520px){.content{padding:16px!important}.top{padding:24px 18px!important}.card{padding:18px!important}.brand{font-size:27px!important}h2{font-size:25px!important}input{font-size:16px!important;min-height:52px}.btn{min-height:52px!important}}
-  `;document.head.append(style);
+  `;document.head.append(style);}
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
 })();
