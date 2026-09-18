@@ -1,0 +1,20 @@
+{
+  "id":"./customer.html",
+  "name":"LOYALTY - My personal wallet",
+  "short_name":"LOYALTY",
+  "description":"Your personal LOYALTY wallet",
+  "start_url":"./customer.html?source=pwa",
+  "scope":"./",
+  "display":"standalone",
+  "display_override":["standalone","minimal-ui"],
+  "orientation":"portrait",
+  "background_color":"#ffffff",
+  "theme_color":"#171b24",
+  "lang":"en",
+  "dir":"ltr",
+  "icons":[
+    {"src":"icon-192.svg","sizes":"192x192","type":"image/svg+xml","purpose":"any"},
+    {"src":"icon-512.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any"},
+    {"src":"icon-512.svg","sizes":"512x512","type":"image/svg+xml","purpose":"maskable"}
+  ]
+}
